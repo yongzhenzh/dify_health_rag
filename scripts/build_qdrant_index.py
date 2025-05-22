@@ -1,4 +1,3 @@
-
 import json
 from embedding import EmbeddingModel
 from qdrant_client import QdrantClient
