@@ -1,0 +1,8 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.2
+torch==2.1.1
+transformers==4.35.2
+qdrant-client==1.7.0
+mysql-connector-python==8.2.0
+requests==2.31.0

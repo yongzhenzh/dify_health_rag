@@ -1,0 +1,10 @@
+{
+    "products": [
+        {
+            "id": "prod_001",
+            "name": "Omega-3 Fish Oil",
+            "description": "Heart health supplement with EPA & DHA",
+            "categories": ["supplements", "heart_health"]
+        }
+    ]
+}

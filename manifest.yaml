@@ -1,0 +1,68 @@
+version: 0.0.1
+type: "plugin"
+author: "yongzhenzh"
+name: "health_retriever"
+label:
+  en_US: "Health Retriever"
+  zh_Hans: "健康检索插件"
+created_at: "2024-03-19T08:00:00.000000000Z"
+resource:
+  memory: 1048576
+  permission:
+    tool:
+      enabled: true
+    model:
+      enabled: false
+    endpoint:
+      enabled: true
+    app:
+      enabled: false
+    storage: 
+      enabled: false
+      size: 1024
+meta:
+  version: 0.0.1
+  arch:
+    - "amd64"
+    - "arm64"
+  runner:
+    language: "python"
+    version: "3.12"
+    entrypoint: "main"
+tool:
+  name: health_retriever
+  label: "Health Retriever"
+  type: api
+  api:
+    url: "http://localhost:8000/retrieve"
+    method: POST
+  description:
+    en_US: "Dual-path retrieval for health QA and product recommendations"
+    zh_Hans: "双路召回的健康问答和产品推荐系统"
+  parameters:
+    type: object
+    required: ["query", "user_id"]
+    properties:
+      query:
+        type: string
+        description: 
+          en_US: "User's health-related question"
+          zh_Hans: "用户的健康相关问题"
+      user_id:
+        type: string
+        description:
+          en_US: "User's unique identifier"
+          zh_Hans: "用户唯一标识"
+  return:
+    type: object
+    properties:
+      answer:
+        type: string
+        description:
+          en_US: "Health-related answer"
+          zh_Hans: "健康相关答案"
+      recommendations:
+        type: array
+        description:
+          en_US: "List of recommended products"
+          zh_Hans: "推荐产品列表"
